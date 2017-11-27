@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+<title>Prob. Estatistica</title>
+</head>
+
+<body>
+<div class="container">
+	<div class="jumbotron">
+		<h1 class="display-3">Probabilidade e Estatistica</h1>
+		<p class="lead">Construção da Variavel Continua</p>
+		<hr class="my-4">
+		<br class="row">
+			<div class="form-group">
+				<label for="dados">Insira os dados. Podem ser separados por espaços!</label>
+				<textarea id="dados" class="form-control" rows="5"></textarea>
+			</div>
+			<div class="form-inline">
+				<button type="button" class="btn btn-primary" onclick="$('#modalGerarDados').modal('show');">Gerar dados</button>
+				<button type="button" class="btn btn-success" onclick="index.executar();">Executar</button>
+			</div>
+		</br>
+			<div id="divRol" class="form-group" style="display: none">
+				<label for="rol">ROL</label>
+				<textarea id="rol" class="form-control" rows="5" disabled="false"></textarea>
+			</div>
+			<table id="tabelaDistribuicao" class="table table-responsive">
+				<thead>
+				<tr>
+					<th>Classes</th>
+					<th>Intervalo</th>
+					<th>f</th>
+					<th>fr%</th>
+					<th>F</th>
+					<th>Fr%</th>
+				</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="modal fade" id="modalGerarDados" tabindex="-1" role="dialog" aria-labelledby="modalTitulo">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="modalTitulo">Gerar dados</h4>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<labe for="nElem">Numero de elementos</label>
+						<input id="nElem" class="form-control" type="number" />
+					</div>
+					<div class="form-group">
+						<labe for="minimo">Minimo</label>
+						<input id="minimo" class="form-control" type="number" />
+					</div>
+					<div class="form-group">
+						<labe for="maximo">Maximo</label>
+						<input id="maximo" class="form-control" type="number" />
+					</div>
+				</div>
+				<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+				<button type="button" class="btn btn-primary" onclick="index.gerarDados()">Gerar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="index.js"></script>
+</body>
+
+</html>
